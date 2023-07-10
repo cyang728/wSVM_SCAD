@@ -1,4 +1,4 @@
-# SCAD SVM Classification with Weighted Data
+# Weighted SVM Classification with SCAD penalty
 
 This repository contains an R implementation of SCAD SVM (Support Vector Machine) classification with weighted data. SCAD SVM is a variant of SVM that incorporates variable selection using the SCAD (Smoothly Clipped Absolute Deviation) penalty. The implementation in this repository extends the SCAD SVM algorithm to handle weighted data, allowing for improved handling of imbalanced datasets.
 
