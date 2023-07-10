@@ -8,8 +8,6 @@ This repository contains an R implementation of SCAD SVM (Support Vector Machine
 - [Installation](#installation)
 - [Usage](#usage)
 - [Parameters](#parameters)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -59,8 +57,3 @@ The SCAD SVM classification function with weighted data accepts several paramete
 - Additional parameters for customization (e.g., tolerance, seed, maxIter, verbose, etc.)
 Please adjust the parameters according to your specific use case.
 
-## Contributing
-Contributions to this project are welcome. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License.
