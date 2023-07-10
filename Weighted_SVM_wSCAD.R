@@ -1,5 +1,5 @@
-scadsvc <- function(lambda1 = 0.01, x, y, a = 3.7, tol = 10^(-4), wt = w_hat,
-                    class.weights = NULL, seed = 123, maxIter = 1, verbose = FALSE){
+scadsvc <- function(lambda1 = 0.01, x, y, a = 3.7, tol = 10^(-4), sample.weights = w_hat,
+                    seed = 123, maxIter = 1, verbose = FALSE){
   # SCAD weigghted SVM classification
   #
   # Input:
@@ -31,7 +31,7 @@ scadsvc <- function(lambda1 = 0.01, x, y, a = 3.7, tol = 10^(-4), wt = w_hat,
   set.seed(seed)
   dat_tmp <- cbind(xtrain, ytrain)
   colnames(dat_tmp)[ncol(xtrain) + 1] <- "trt"
-  obj <- WeightSVM::wsvm(trt ~ ., weight = wt, type = "C-classification",
+  obj <- WeightSVM::wsvm(trt ~ ., weight = sample.weights, type = "C-classification",
                          data = dat_tmp, kernel = "linear")
   index <- obj$index
   # type of svm
@@ -43,7 +43,7 @@ scadsvc <- function(lambda1 = 0.01, x, y, a = 3.7, tol = 10^(-4), wt = w_hat,
   # classifier,  which is the negative intercept.
   b <- obj$rho
   diff <- 1000 # was 1, in original script also 1000 (last modification: 18-March-2009)
-  ntrain <- sum(wt)
+  ntrain <- sum(sample.weights)
   d <- ncol(xtrain)
   xind <- 1:d
   i <- 1
